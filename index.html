@@ -18,7 +18,7 @@
 
         <!--Search Sidebar-->
         <div class = "col-4">
-        <p><b>Search for a City:</b></p>
+        <p style="padding-top: 10px;"><b>Search for a City:</b></p>
         <input></input>
         <button class="btn btn-primary"><i class="fas fa-search"></i></button>
         <span id="searchHistory"></span>
@@ -28,12 +28,16 @@
         <!--Further nested rows for weather results-->
         <div class = "col-8">
             <!--Today's Results-->
-            <div class = "row"><h2>Atlanta</h2></div>
-                <p>Temperature:</p><span id="tempSpan"></span>
-                <p>Humidty:</p><span id="humSpan"></span>
-                <p>Wind Speed:</p><span id="windSpan"></span>
-                <p>UV Index:</p><span id="UVSpan"></span>
+            <div class = "row">
+                <h2 style="padding-top: 20px;">Search for a City</h2></div>
+            
+            <!-- <div class = "row"> -->
+                <div class="row" id="tempDiv">Temperature</div>
+                <div class="row" id="humDiv">Humidity</div>
+                <div class ="row" id="windDiv">Wind Speed:</div>
+                <div class ="row" id="UVDiv">UV Index</div>
                 <br />
+            <!-- </div>  -->
             <!--5-Day Forecast-->
             <div class = "row"><h4>5-Day Forecast:</h4></div>
             <span id="fiveDay"></span>
