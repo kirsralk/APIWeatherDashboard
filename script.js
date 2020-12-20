@@ -36,34 +36,35 @@ var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
         console.log("Wind Speed: " + response.wind.speed);
         console.log("Humidity: " + response.main.humidity);
         console.log("Temperature (F): " + tempF);
+
+
+        
       });
 
-// // Separate API call required for UV index
-// var queryURL2 = "https://api.openweathermap.org/data/2.5/uvi?" +
-//   "q=" + "Seattle" + "&appid=" + APIKey;
+// Separate API call required for UV index
 
-//       $.ajax({
-//         url: queryURL2,
-//         method: "GET"
-//       })
-//         // We store all of the retrieved data inside of an object called "response2"
-//         .then(function(response2) {
-  
-//           // Log the queryURL
-//           console.log(queryURL2);
-  
-//           // Log the resulting object
-//           console.log(response2);
+var queryURL2 = "https://api.openweathermap.org/data/2.5/uvi?" +
+  "lat=" + "47.61" + "&lon=" + "-122.33" + "&appid=" + APIKey;
 
-//           // Transfer content to HTML
-//           $("#humDiv").text("Humidity: " + response.main.humidity);
-        
-//           // add temp content to html
-//           $(".temp").text("Temperature (K) " + response.main.temp);
-//           $(".tempF").text("Temperature (F) " + tempF.toFixed(2));
+      $.ajax({
+        url: queryURL2,
+        method: "GET"
+      })
+        // We store all of the retrieved data inside of an object called "response2"
+        .then(function(response2) {
   
-//           // Log the data in the console as well
-//           console.log("Wind Speed: " + response.wind.speed);
-//           console.log("Humidity: " + response.main.humidity);
-//           console.log("Temperature (F): " + tempF);
-//         });
+          // Log the queryURL
+          console.log(queryURL2);
+
+        //   var locationLat = response.coord.lat;
+        //   var locationLon = response.coord.lon;
+  
+          // Log the resulting object
+          console.log(response2);
+
+
+          $("#UVDiv").text("UV Index: " + response2.value);
+  
+          // Log the data in the console as well
+          console.log("Wind Speed: " + response2.value);
+        });
