@@ -1,3 +1,10 @@
+// Function that executes on search click
+$("#searchBtn").on("click", function(){
+    alert("this button works");
+    var userInput = $("#searchInput").val().trim();
+    console.log("The user typed: " + userInput);
+});
+
 // Today's date
 var today = moment().format("L");
 
@@ -64,3 +71,4 @@ var queryURL2 = "https://api.openweathermap.org/data/2.5/uvi?" +
           // Log the data in the console as well
           console.log("UV Index: " + response2.value);
         });
+
