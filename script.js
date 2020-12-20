@@ -24,14 +24,10 @@ var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
 
         // Transfer content to HTML
         $(".city").html("<h1>" + response.name + " Weather Details</h1>");
-        $("#tempDiv").text("Temperature: " + tempF);
-        $("#windDiv").text("Wind Speed: " + response.wind.speed);
-        $("#humDiv").text("Humidity: " + response.main.humidity);
+        $("#tempDiv").text("Temperature: " + tempF + "°F");
+        $("#humDiv").text("Humidity: " + response.main.humidity + "%");
+        $("#windDiv").text("Wind Speed: " + response.wind.speed + " MPH");
       
-        // add temp content to html
-        $(".temp").text("Temperature (K) " + response.main.temp);
-        $(".tempF").text("Temperature (F) " + tempF.toFixed(2));
-
         // Log the data in the console as well
         console.log("Wind Speed: " + response.wind.speed);
         console.log("Humidity: " + response.main.humidity);
@@ -56,15 +52,15 @@ var queryURL2 = "https://api.openweathermap.org/data/2.5/uvi?" +
           // Log the queryURL
           console.log(queryURL2);
 
-        //   var locationLat = response.coord.lat;
-        //   var locationLon = response.coord.lon;
+        //   var locationLat = response2.coord.lat;
+        //   var locationLon = response2.coord.lon;
   
           // Log the resulting object
           console.log(response2);
-
-
+           
+          // add UV content to HTML
           $("#UVDiv").text("UV Index: " + response2.value);
   
           // Log the data in the console as well
-          console.log("Wind Speed: " + response2.value);
+          console.log("UV Index: " + response2.value);
         });
