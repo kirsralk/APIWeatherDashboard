@@ -1,7 +1,6 @@
 // Today's date
 var today = moment().format("L");
 
-
 // This is our API key
 var APIKey = "166a433c57516f51dfab1f7edaed8413";
 
@@ -36,9 +35,7 @@ var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
         console.log("Wind Speed: " + response.wind.speed);
         console.log("Humidity: " + response.main.humidity);
         console.log("Temperature (F): " + tempF);
-
-
-        
+       
       });
 
 // Separate API call required for UV index

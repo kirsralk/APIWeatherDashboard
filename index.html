@@ -10,19 +10,20 @@
     <title>Weather Dashboard</title>
 </head>
 <body>
+    <!--Div contaier for Header bar-->
+<div class = "container-fluid text-center">
+    <h1 class="text-center" style="background-color: rgb(56, 56, 56); color: white; padding: 10px;">Weather Dashboard</h1>
+</div>
+
+    <!--Container:  Main Content-->
 <div class = "container">
-
-    <!--Row 1: Header Bar-->
-    <div class = "row" style="background-color: rgb(70, 70, 70); color: white;"><h1>Weather Dashboard</h1></div>
-
-    <!--Row 2: Main Content-->
     <div class = "row">
 
         <!--Search Sidebar-->
         <div class = "col-4">
         <p style="padding-top: 10px;"><b>Search for a City:</b></p>
         <input></input>
-        <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+        <button class="btn btn-primary" id ="search"><i class="fas fa-search"></i></button>
         <span id="searchHistory"></span>
 
         </div>
@@ -44,9 +45,9 @@
             <div class = "row"><h4>5-Day Forecast:</h4></div>
             <span id="fiveDay"></span>
         </div>
-    </div>
-
 </div>
+
+    </div>
 
 
 <script src="script.js"></script>
