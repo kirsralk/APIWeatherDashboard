@@ -1,3 +1,7 @@
+// Today's date
+var today = moment().format("L");
+
+
 // This is our API key
 var APIKey = "166a433c57516f51dfab1f7edaed8413";
 
@@ -23,7 +27,7 @@ var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
         var tempF = (response.main.temp - 273.15) * 1.80 + 32;        
 
         // Transfer content to HTML
-        $("#cityName").html("<h2>" + response.name);
+        $("#cityName").html("<h2>" + response.name + " (" + today + ")");
         $("#tempDiv").text("Temperature: " + tempF.toFixed(1) + "°F");
         $("#humDiv").text("Humidity: " + response.main.humidity + "%");
         $("#windDiv").text("Wind Speed: " + response.wind.speed + " MPH");
@@ -38,7 +42,6 @@ var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
       });
 
 // Separate API call required for UV index
-
 var queryURL2 = "https://api.openweathermap.org/data/2.5/uvi?" +
   "lat=" + "47.61" + "&lon=" + "-122.33" + "&appid=" + APIKey;
 
