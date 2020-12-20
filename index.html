@@ -20,17 +20,23 @@
         <div class = "col-4">
         <p><b>Search for a City:</b></p>
         <input></input>
-        <button><i class="fas fa-search-location"></i></button>
+        <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+        <span id="searchHistory"></span>
 
         </div>
 
         <!--Further nested rows for weather results-->
         <div class = "col-8">
             <!--Today's Results-->
-            <div class = "row"><h1>Atlanta</h1></div>
-
+            <div class = "row"><h2>Atlanta</h2></div>
+                <p>Temperature:</p><span id="tempSpan"></span>
+                <p>Humidty:</p><span id="humSpan"></span>
+                <p>Wind Speed:</p><span id="windSpan"></span>
+                <p>UV Index:</p><span id="UVSpan"></span>
+                <br />
             <!--5-Day Forecast-->
-            <div class = "row">5-Day Forecast</div>
+            <div class = "row"><h4>5-Day Forecast:</h4></div>
+            <span id="fiveDay"></span>
         </div>
     </div>
 
