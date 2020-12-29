@@ -23,7 +23,7 @@ var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + userInput 
     .then(function(response) {
 
     // Log the queryURL
-    console.log(queryURL);
+    console.log("The first queryURL is: " + queryURL);
 
     // Log the resulting object
     console.log(response);
@@ -41,10 +41,8 @@ var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + userInput 
     console.log("Wind Speed: " + response.wind.speed);
     console.log("Humidity: " + response.main.humidity);
     console.log("Temperature (F): " + tempF);
-
-    console.log("at line 48 the user typed: " + userInput);
-    console.log("latitude: " + response.coord.lat);
-    console.log("longitude: " + response.coord.lon);
+    console.log("Latitude: " + response.coord.lat);
+    console.log("Longitude: " + response.coord.lon);
 
     var locationLat = response.coord.lat;
     var locationLon = response.coord.lon;
@@ -61,7 +59,7 @@ var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + userInput 
     .then(function(response2) {
 
       // Log the queryURL
-      console.log("the second return is: " + queryURL2);
+      console.log("the second queryURL is: " + queryURL2);
 
       var locationLat = response2.lat;
       var locationLon = response2.lon;

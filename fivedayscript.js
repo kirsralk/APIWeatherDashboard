@@ -17,11 +17,19 @@ var queryURLForecast = "https://api.openweathermap.org/data/2.5/forecast?q=" + u
     })
   
     // We store all of the retrieved data inside of an object called "response"
-    .then(function(response) {
+        .then(function(response) {
+            // Store an array of results
+            var results = response.list;
+
+            console.log(results);
 
     // Log the resulting object
     console.log(response);
-    console.log("Day 1 Temp: " + response.list[0].main.temp);
+    console.log("Day 1 Temp Min: " + response.list[0].main.temp_min);
+    console.log("Day 1 Temp Max: " + response.list[0].main.temp_max);
+    console.log("Day 1 Humidity: " + response.list[0].main.humidity);
+    console.log("Day 1 Icon: " + response.list[0].weather[0].icon);
+
     
     // // Convert the temp to fahrenheit
     // var tempF = (response.main.temp - 273.15) * 1.80 + 32;        
