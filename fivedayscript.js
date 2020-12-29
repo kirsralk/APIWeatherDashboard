@@ -7,7 +7,7 @@ $("#searchBtn").on("click", function(){
     console.log("The user typed: " + userInput);
 
 // Here we are building the URL we need to query the database
-var queryURLForecast = "https://api.openweathermap.org/data/2.5/forecast?q=" + userInput + "&appid=" + APIKey;
+var queryURLForecast = "https://api.openweathermap.org/data/2.5/forecast/daily?q=" + userInput + "&appid=" + APIKey;
 
 
 // Here we run our AJAX call to the OpenWeatherMap API
@@ -20,16 +20,29 @@ var queryURLForecast = "https://api.openweathermap.org/data/2.5/forecast?q=" + u
         .then(function(response) {
             // Store an array of results
             var results = response.list;
-
+            // Log the resulting object in the console
             console.log(results);
 
-    // Log the resulting object
-    console.log(response);
-    console.log("Day 1 Temp Min: " + response.list[0].main.temp_min);
-    console.log("Day 1 Temp Max: " + response.list[0].main.temp_max);
-    console.log("Day 1 Humidity: " + response.list[0].main.humidity);
-    console.log("Day 1 Icon: " + response.list[0].weather[0].icon);
+            // Log specific data needed for 5 Day Forecast cards
+            // console.log(response);
+            console.log("Day 1 Temp: " + response.list[0].temp.day);
+            console.log("Day 1 Humidity: " + response.list[0].humidity);
+            console.log("Day 1 Icon: " + response.list[0].weather[0].icon);
 
+            // Creating a div for results with the class "card"
+            var newCard = $("<div>");
+            newCard.attr("class", "card");
+            newCard.attr("")
+
+            // Creating a paragraph tag with the Temp Min
+            var tempMin = $("<p>").text("Temp: " + response.list[0].temp.day);
+
+            // Appending the card to the "fiveDay" span
+            newCard.append(tempMin);
+
+            $("#fiveDay").append(newCard);
+
+            
     
     // // Convert the temp to fahrenheit
     // var tempF = (response.main.temp - 273.15) * 1.80 + 32;        
@@ -40,18 +53,6 @@ var queryURLForecast = "https://api.openweathermap.org/data/2.5/forecast?q=" + u
     // $("#humDiv").text("Humidity: " + response.main.humidity + "%");
     // $("#windDiv").text("Wind Speed: " + response.wind.speed + " MPH");
   
-    // // Log the data in the console as well
-    // console.log("Wind Speed: " + response.wind.speed);
-    // console.log("Humidity: " + response.main.humidity);
-    // console.log("Temperature (F): " + tempF);
-
-    // console.log("at line 48 the user typed: " + userInput);
-    // console.log("latitude: " + response.coord.lat);
-    // console.log("longitude: " + response.coord.lon);
-
-    // var locationLat = response.coord.lat;
-    // var locationLon = response.coord.lon;
-
     });
 });
 
