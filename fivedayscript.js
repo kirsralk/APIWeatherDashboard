@@ -23,9 +23,11 @@ var queryURLForecast = "https://api.openweathermap.org/data/2.5/forecast/daily?q
             // Log the resulting object in the console
             console.log(results);
 
-            var epochDate = response.list[0].dt;
-            var myDate = new Date(epochDate *1000);
-            console.log(myDate); 
+            // Convert date result from Epoch time to readable time
+            var epochDate = response.list[1].dt;
+            var myDate = new Date(epochDate * 1000);
+            var myDateRead = myDate.toLocaleDateString();
+            console.log(myDateRead); 
 
             // Save icon data and convert to display png
             var iconCode = response.list[0].weather[0].icon
@@ -33,20 +35,20 @@ var queryURLForecast = "https://api.openweathermap.org/data/2.5/forecast/daily?q
 
             // Log specific data needed for 5 Day Forecast cards
             // console.log(response);
-            console.log("Day 1 Temp: " + response.list[0].temp.day);
+            console.log("Day 1 Temp: " + response.list[1].temp.day);
             console.log("Day 1 Humidity: " + response.list[0].humidity);
-            console.log("Day 1 Icon: " + response.list[0].weather[0].icon);
-            console.log("Epoch date: " + response.list[0].dt);
+            console.log("Day 1 Icon: " + response.list[1].weather[0].icon);
+            console.log("Epoch date: " + response.list[1].dt);
 
             // Creating a div for results with the class "card"
             var newCard = $("<div>");
-            newCard.attr("class", "card");
-            newCard.attr("")
+            newCard.attr("class", "card fiveDay");
 
             // Convert temp to fahrenheit
             var tempF = (response.list[0].temp.day - 273.15) * 1.80 + 32;
 
             // Creating paragraph tags with forecast data
+            var boldDate = $("<b>").text(myDateRead);
             var tempDay = $("<p>").text("Temp: " + tempF.toFixed(1) + "°F");
             var humDay = $("<p>").text("Humidity: " + response.list[0].humidity + "%");
             var iconDay = $("<img>");
@@ -54,7 +56,7 @@ var queryURLForecast = "https://api.openweathermap.org/data/2.5/forecast/daily?q
             iconDay.attr("style", "width: 50px");
 
             // Appending the card to the "fiveDay" span
-            newCard.append(myDate);
+            newCard.append(boldDate);
             newCard.append(iconDay);            
             newCard.append(tempDay);
             newCard.append(humDay);
