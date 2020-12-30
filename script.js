@@ -38,11 +38,11 @@ var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + userInput 
     $("#windDiv").text("Wind Speed: " + response.wind.speed + " MPH");
   
     // Log the data in the console as well
-    console.log("Wind Speed: " + response.wind.speed);
-    console.log("Humidity: " + response.main.humidity);
-    console.log("Temperature (F): " + tempF);
-    console.log("Latitude: " + response.coord.lat);
-    console.log("Longitude: " + response.coord.lon);
+    // console.log("Wind Speed: " + response.wind.speed);
+    // console.log("Humidity: " + response.main.humidity);
+    // console.log("Temperature (F): " + tempF);
+    // console.log("Latitude: " + response.coord.lat);
+    // console.log("Longitude: " + response.coord.lon);
 
     var locationLat = response.coord.lat;
     var locationLon = response.coord.lon;
@@ -60,16 +60,21 @@ var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + userInput 
 
       // Log the queryURL
       console.log("the second queryURL is: " + queryURL2);
-
-      var locationLat = response2.lat;
-      var locationLon = response2.lon;
      
       // add UV content to HTML
-      $("#UVDiv").text("UV Index: " + response2.value);
+      var todayUV = response2.value;
+      $("#UVOutput").text(todayUV);
+      var badgeUV = $("#UVOutput");
+      badgeUV.attr("class", "badge");
 
-      // Log the data in the console as well
-      console.log("UV Index: " + response2.value);
-
+      // If statement to change color of UV badge based on conditions
+        if (todayUV < 3) {
+          badgeUV.attr("class", "badge bg-success");
+        } else if (todayUV > 6 ) {
+          badgeUV.attr("class", "badge bg-danger");
+        } else {
+          badgeUV.attr("class","badge bg-warning");
+        }
 
     });
 
