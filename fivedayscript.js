@@ -35,6 +35,7 @@ var queryURLForecast = "https://api.openweathermap.org/data/2.5/forecast/daily?q
             var iconTodayURL = "http://openweathermap.org/img/w/" + iconCodeToday + ".png";     
             var iconImage = $("<img>");
             iconImage.attr("src", iconTodayURL);
+            iconImage.attr("id","weatherIcon");
             $("#mainDiv").append(iconImage);
 
             // For loop to create 5 cards for forecast

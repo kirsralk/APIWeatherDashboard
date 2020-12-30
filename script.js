@@ -1,6 +1,3 @@
-// // Today's date
-// var today = moment().format("L");
-
 // This is our API key
 var APIKey = "166a433c57516f51dfab1f7edaed8413";
 

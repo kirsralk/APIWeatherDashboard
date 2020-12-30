@@ -8,8 +8,10 @@ var searches = [];
 init();
 
 function renderSearches() {
-  // Clear searchHistory element
+  // Clear all result output elements
   searchHistory.innerHTML = "";
+  fiveDay.innerHTML = "";
+  $("#weatherIcon").remove();
 
   // Render a new li for each search
   for (var i = 0; i < searches.length; i++) {
