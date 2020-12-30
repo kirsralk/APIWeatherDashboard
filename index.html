@@ -22,10 +22,18 @@
 
         <!--Search Sidebar-->
         <div class = "col-3 grayBgd">
-        <h4 style="padding-top: 10px;">Search for a City:</h4>
-        <input id="searchInput"></input>
-        <button class="btn btn-primary" id ="searchBtn"><i class="fas fa-search"></i></button>
-        <span id="searchHistory"></span>
+            <h4 style="padding-top: 10px;">Search for a City:</h4>
+                <form id="searchForm" method="POST">
+                    <input id="searchInput"></input>
+                    <button class="btn btn-primary" id ="searchBtn"><i class="fas fa-search"></i></button>
+                </form>
+                           
+            <!--Card to hold search history-->
+                <div class ="card margin-top" id="searchHistory">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Test Item</li>
+                    </ul>
+                </div>
 
         </div>
 
