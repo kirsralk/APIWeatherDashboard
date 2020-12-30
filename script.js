@@ -12,7 +12,6 @@ $("#searchBtn").on("click", function(){
 // Here we are building the URL we need to query the database
 var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + userInput + "&appid=" + APIKey;
 
-
 // Here we run our AJAX call to the OpenWeatherMap API
     $.ajax({
     url: queryURL,
@@ -36,14 +35,8 @@ var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + userInput 
     $("#tempDiv").text("Temperature: " + tempF.toFixed(1) + "°F");
     $("#humDiv").text("Humidity: " + response.main.humidity + "%");
     $("#windDiv").text("Wind Speed: " + response.wind.speed + " MPH");
-  
-    // Log the data in the console as well
-    // console.log("Wind Speed: " + response.wind.speed);
-    // console.log("Humidity: " + response.main.humidity);
-    // console.log("Temperature (F): " + tempF);
-    // console.log("Latitude: " + response.coord.lat);
-    // console.log("Longitude: " + response.coord.lon);
 
+    // Store latitude and longitude
     var locationLat = response.coord.lat;
     var locationLon = response.coord.lon;
 
@@ -65,7 +58,6 @@ var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + userInput 
       var todayUV = response2.value;
       $("#UVOutput").text(todayUV);
       var badgeUV = $("#UVOutput");
-      badgeUV.attr("class", "badge");
 
       // If statement to change color of UV badge based on conditions
         if (todayUV < 3) {
@@ -76,9 +68,8 @@ var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + userInput 
           badgeUV.attr("class","badge bg-warning");
         }
 
-    });
-
-  });
-});
+    }); //End of second .then function
+  }); // End of first .then function
+}); // End of search button function
 
 

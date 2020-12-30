@@ -7,5 +7,14 @@
 }
 
 .spacedDivs {
-    margin: 5px;
+    margin-bottom: 5px;
+    padding-left: 20px;
+}
+
+.grayBgd {
+    background: #DCDCDC;
+}
+
+.padded {
+    padding: 20px;
 }

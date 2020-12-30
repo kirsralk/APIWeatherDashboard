@@ -21,8 +21,8 @@
     <div class = "row">
 
         <!--Search Sidebar-->
-        <div class = "col-3">
-        <p style="padding-top: 10px;"><b>Search for a City:</b></p>
+        <div class = "col-3 grayBgd">
+        <h4 style="padding-top: 10px;">Search for a City:</h4>
         <input id="searchInput"></input>
         <button class="btn btn-primary" id ="searchBtn"><i class="fas fa-search"></i></button>
         <span id="searchHistory"></span>
@@ -32,19 +32,19 @@
         <!--Further nested rows for weather results-->
         <div class = "col-9">
             <!--Today's Results-->
-            <div class = "row" id="mainDiv">
+            <div class = "row padded" id="mainDiv">
                 <h2 style="padding-top: 20px;" id= "cityName">Search for a City</h2></div>
             
             <!-- Separate rows for each output to have a div -->
-            <div class="row" id="tempDiv">Temperature:</div>
-            <div class="row" id="humDiv">Humidity:</div>
-            <div class ="row" id="windDiv">Wind Speed:</div>
-            <div class ="row" id="UVDiv">UV Index:&nbsp;<span id="UVOutput"></span></div>
+            <div class ="row spacedDivs" id="tempDiv">Temperature:</div>
+            <div class ="row spacedDivs" id="humDiv">Humidity:</div>
+            <div class ="row spacedDivs" id="windDiv">Wind Speed:</div>
+            <div class ="row spacedDivs" id="UVDiv">UV Index:&nbsp;<span id="UVOutput"></span></div>
             <br />
 
             <!--5-Day Forecast-->
-            <div class = "row"><h4>5-Day Forecast:</h4></div>
-            <div class = "row" id="fiveDay"></div>
+            <div class = "row spacedDivs"><h4>5-Day Forecast:</h4></div>
+            <div class = "row spacedDivs" id="fiveDay"></div>
             <!-- <span id="fiveDay"></span> -->
         </div>
 </div>
@@ -54,6 +54,7 @@
 
 <script src="script.js"></script>
 <script src="fivedayscript.js"></script>
+<script src="search.js"></script>
 </body>
 
 </html>
