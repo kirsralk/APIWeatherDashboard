@@ -63,3 +63,4 @@ searchForm.addEventListener("submit", function(event) {
   renderSearches();
 });
 
+console.log("The user's search history: " + searches);

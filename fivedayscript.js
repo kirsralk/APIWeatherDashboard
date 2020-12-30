@@ -23,6 +23,13 @@ var queryURLForecast = "https://api.openweathermap.org/data/2.5/forecast/daily?q
             // Log the resulting object in the console
             console.log(results);
 
+            //Display today's date next to result
+            var epochToday = response.list[0].dt;
+            var myToday = new Date(epochToday * 1000);
+            var myTodayRead = myToday.toLocaleDateString();
+            // console.log(myDateRead); 
+            $("#cityName").html("<h2>" + userInput + " (" + myTodayRead + ")");
+
             // Add weather icon to today's title (outside for loop)
             var iconCodeToday = response.list[0].weather[0].icon;
             var iconTodayURL = "http://openweathermap.org/img/w/" + iconCodeToday + ".png";     
@@ -31,7 +38,7 @@ var queryURLForecast = "https://api.openweathermap.org/data/2.5/forecast/daily?q
             $("#mainDiv").append(iconImage);
 
             // For loop to create 5 cards for forecast
-            
+
             for (var i = 1; i < 6; i++) {
                 // Convert date result from Epoch time to readable time
                 var epochDate = response.list[i].dt;
@@ -42,13 +49,6 @@ var queryURLForecast = "https://api.openweathermap.org/data/2.5/forecast/daily?q
                 // Save icon data and convert to display png
                 var iconCode = response.list[i].weather[0].icon;
                 var iconURL = "http://openweathermap.org/img/w/" + iconCode + ".png";
-
-                // Log specific data needed for 5 Day Forecast cards
-                // console.log(response);
-                // console.log("Day 1 Temp: " + response.list[i].temp.day);
-                // console.log("Day 1 Humidity: " + response.list[i].humidity);
-                // console.log("Day 1 Icon: " + response.list[i].weather[0].icon);
-                // console.log("Epoch date: " + response.list[i].dt);
 
                 // Creating a div for results with the class "card"
                 var newCard = $("<div>");
