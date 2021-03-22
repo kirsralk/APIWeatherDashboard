@@ -1,7 +1,7 @@
 # 06 Server-Side APIs: Weather Dashboard
 
-Deployed Websute URL: https://kirsralk.github.io/APIWeatherDashboard/
-GitHUB repository URL: https://github.com/kirsralk/APIWeatherDashboard/
+Deployed Websute URL: https://kirsralk.github.io/APIWeatherDashboard/  
+GitHUB repository URL: https://github.com/kirsralk/APIWeatherDashboard/  
 Screenshot: ![Screenshot](./screenshot.png)
 
 ## User Story
